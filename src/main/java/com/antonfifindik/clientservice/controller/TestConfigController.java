@@ -14,8 +14,16 @@ public class TestConfigController {
     @Value("${config.test.message: Config server is not working.. =\\}")
     private String message;
 
+    @Value("${common.config.test.message: Config server is not working.. =\\}")
+    private String commonMessage;
+
     @GetMapping
     public String message() {
         return message;
+    }
+
+    @GetMapping("/common")
+    public String commonMessage() {
+        return commonMessage;
     }
 }
