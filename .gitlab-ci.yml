@@ -1,0 +1,21 @@
+# checkstyle
+checkstyle:
+  script:
+    - mvn clean validate -Pcheckstyle
+  artifacts:
+    paths:
+      - target/checkstyle-result.xml
+    expire_in: 1 day
+
+# build only two branches
+build_package:
+  only:
+    - master
+    - develop
+  script:
+    - mvn clean package
+  artifacts:
+    paths:
+      - target/client-service-0.0.2.war
+    expire_in: 1 day
+
