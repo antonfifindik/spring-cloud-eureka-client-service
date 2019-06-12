@@ -10,4 +10,4 @@ management:
   endpoints:
     web:
       exposure:
-        include: refresh      # or '*' for include all actuator endpoints
+        include: '*'
